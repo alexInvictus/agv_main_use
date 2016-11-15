@@ -81,11 +81,6 @@ int main(void)
   /* Initialize interrupts */
   MX_NVIC_Init();
 
-  /* USER CODE BEGIN 2 */
-
-  /* USER CODE END 2 */
-if(HAL_ADC_Start_DMA(&hadc1,(uint32_t*)&uhADCxConvertedValue2,100)!=HAL_OK)Error_Handler();   //开启ADC——DMA传输通道
-  /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
@@ -176,14 +171,17 @@ if(HAL_ADC_Start_DMA(&hadc1,(uint32_t*)&uhADCxConvertedValue2,100)!=HAL_OK)Error
 								 {
 									 Command_State=Run_Ruku_State;//起始位置收到rk前进模式
 								 }
-								packflag_3=0;
-								USART_RX_STA_3=0; 
+								  packflag_3=0;
+								  USART_RX_STA_3=0;								 
 							 }
 		      break;
 		
 		case Run_Ruku_State:
+			
 			     Motor_Ruku();
+		      
 		      break;
+		
 		default:
 			
 		      break;      

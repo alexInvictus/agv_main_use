@@ -49,7 +49,6 @@ u8 Tsk[3]={'T','S','K'};
 u8 Loc[3]={'L','O','C'};
 u8 Fw[2]={'f','w'};
 u8 Bk[2]={'b','k'};
-u8 St[2]={'s','t'};
 u8 Rk[2]={'r','k'};                
 u8 Id[3]={'0','1','2'};             //预存的ID号
 u8 Read_Id[3]={'0','0','0'};        //保存从EEPROM读到的车的ID号
@@ -122,7 +121,6 @@ extern u8 Obj[3];
 extern u8 Tra[3];
 extern u8 Tsk[3];
 extern u8 Loc[3];
-extern u8 St[2];
 extern u8 Rk[2];
 extern u8 Fh[2];
 extern u8 Yh[2];

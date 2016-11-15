@@ -8,10 +8,12 @@
 #define USART_REC_LEN_3       200          //最大接收字节
 #define RXBUFFERSIZE   1
 //=====================================================
-//                 按键定义(需更改)
+//                 按键定义、报警定义
 //=====================================================
-#define Key_Start     HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_2)
-#define Key_Stop      HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_3)
+#define Key_Start         HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_2)
+#define Key_Stop          HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_3)
+#define protect_ahead     HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_14)
+#define protect_back      HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_15)
 //=====================================================
 //                 红外传感器的引脚定义
 //=====================================================
@@ -52,16 +54,18 @@
 #define CLK_H HAL_GPIO_WritePin(GPIOH,GPIO_PIN_15,GPIO_PIN_SET)  			//RW=1    5PIN
 #define CLK_L HAL_GPIO_WritePin(GPIOH,GPIO_PIN_15,GPIO_PIN_RESET)   		//RW = 0
 
-//#define PSB_H HAL_GPIO_WritePin(GPIOC,GPIO_PIN_5,GPIO_PIN_SET)  			//RW=1    5PIN
-//#define PSB_L HAL_GPIO_WritePin(GPIOC,GPIO_PIN_5,GPIO_PIN_RESET)   		//RW = 0
-
 #define RST_H HAL_GPIO_WritePin(GPIOI,GPIO_PIN_8,GPIO_PIN_SET)  			//RW=1    5PIN
 #define RST_L HAL_GPIO_WritePin(GPIOI,GPIO_PIN_8,GPIO_PIN_RESET)     		//RW = 0
 //=====================================================
 //                 转弯延迟的时间
 //=====================================================
 #define Turn_time   6500        //6500毫秒
-
+#define TEST_TIM    65000        //65000次检测到就停止
+//=====================================================
+//                 LED的操作
+//=====================================================
+#define LED_ON  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_13,GPIO_PIN_SET) 			  //开启LED灯
+#define LED_OFF HAL_GPIO_WritePin(GPIOA,GPIO_PIN_13,GPIO_PIN_RESET) 			//关闭LED灯 
 //=====================================================
 //                 函数声明
 //=====================================================

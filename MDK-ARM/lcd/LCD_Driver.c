@@ -1,3 +1,5 @@
+#ifndef _LCD_DRIVER_
+#define _LCD_DRIVER_
 #include "all.h"
 
 void LCD_init(void)
@@ -81,3 +83,6 @@ void Voltage_Test(void)    //µÁ—πºÏ≤‚
      delay_ms(3);
      }
 }
+
+#endif
+

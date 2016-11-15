@@ -1,3 +1,5 @@
+#ifndef _C_USART_
+#define _C_USART_
 #include "all.h"
 
 
@@ -212,3 +214,4 @@ void Uart_Analyse(void)
 	 }
 }
 
+#endif

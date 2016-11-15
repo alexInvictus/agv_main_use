@@ -1,3 +1,5 @@
+#ifndef _C_MYIIC_
+#define _C_MYIIC_
 #include "all.h"
 //////////////////////////////////////////////////////////////////////////////////	 
 //本程序只供学习使用，未经作者许可，不得用于其它任何用途
@@ -24,7 +26,7 @@ void IIC_Init(void)
     GPIO_Initure.Mode=GPIO_MODE_OUTPUT_PP;  //推挽输出
     GPIO_Initure.Pull=GPIO_PULLUP;          //上拉
     GPIO_Initure.Speed=GPIO_SPEED_FAST;     //快速
-    HAL_GPIO_Init(GPIOH,&GPIO_Initure);
+    HAL_GPIO_Init(GPIOB,&GPIO_Initure);
     
     IIC_SDA=1;
     IIC_SCL=1;  
@@ -136,4 +138,4 @@ u8 IIC_Read_Byte(unsigned char ack)
     return receive;
 }
 
-
+#endif

@@ -1,3 +1,5 @@
+#ifndef _C_MYIIC2_
+#define _C_MYIIC2_
 #include "all.h"
 //////////////////////////////////////////////////////////////////////////////////	 
 //本程序只供学习使用，未经作者许可，不得用于其它任何用途
@@ -136,4 +138,4 @@ u8 IIC_Read_Byte_2(unsigned char ack)
     return receive;
 }
 
-
+#endif

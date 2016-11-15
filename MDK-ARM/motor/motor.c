@@ -1,3 +1,5 @@
+#ifndef _C_MOTOR_
+#define _C_MOTOR_
 #include "all.h"
 
 void Motor_Ahead_Wait(void)
@@ -33,7 +35,7 @@ void Motor_Ahead_Wait(void)
 	}
 }
 
-void Motor_Ahead(void)
+void Motor_Ahead(void)                                    //向前循迹
 {
   switch(Motor_Status)
 	{
@@ -77,13 +79,13 @@ void Motor_Ahead(void)
 		    break;
 		
 		case Arrive:
-			   tim13_val=0;
-				 tim14_val=0;
-				 __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-				 __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);
-		     Voltage_Test();
-		     Command_State=Store_State;
-		     Motor_Status=Setup;
+						 tim13_val=0;
+						 tim14_val=0;
+						 __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
+						 __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);
+						 Voltage_Test();
+						 Command_State=Store_State;
+						 Motor_Status=Setup;
 		    break;
 				
 		default:
@@ -91,13 +93,15 @@ void Motor_Ahead(void)
 	}
 }
 
-void Motor_Back(void)
+void Motor_Back(void)                                           //返回的循迹函数
 {
   switch(Motor_Status)
 	{
 	  case Setup:
-			  HAL_TIM_PWM_Start(&htim13, TIM_CHANNEL_1);
-		    HAL_TIM_PWM_Start(&htim14, TIM_CHANNEL_1);
+        tim13_val=20;
+		    tim14_val=20;
+		    __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
+        __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);
 		    Motor_Status=Run;
 		    break;
 		
@@ -133,31 +137,33 @@ void Motor_Back(void)
 		         Motor_Status=Setup;			
 		    break;
 		case Arrive:
-			   tim13_val=0;
-				 tim14_val=0;
-				 __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-				 __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);
-		     Voltage_Test();
-		     Command_State=Store_State;
-		     Motor_Status=Setup;
+						 tim13_val=0;
+						 tim14_val=0;
+						 __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
+						 __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);
+						 Voltage_Test();
+						 Command_State=Store_State;
+						 Motor_Status=Setup;
 		    break;			
 		default:
         break;			
 	}
 }
 
-void Motor_Ruku(void)
+void Motor_Ruku(void)                                     //入库的循迹函数
 {
   switch(Motor_Status)
 	{
 	  case Setup:
-			  HAL_TIM_PWM_Start(&htim13, TIM_CHANNEL_1);
-		    HAL_TIM_PWM_Start(&htim14, TIM_CHANNEL_1);
+        tim13_val=20;
+		    tim14_val=20;
+		    __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
+        __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);
 		    Motor_Status=Run;
 		    break;
 		
 		case Run:
-			       	Find_Rfid();             //唯一一点不同是入库哪一个RFID不检测。       
+			       	Find_Rfid();                    
 			        Back_Trailing();
 			
 		    break;
@@ -188,13 +194,13 @@ void Motor_Ruku(void)
 		         Motor_Status=Setup;			
 		    break;
 		case Arrive:
-			   tim13_val=0;
-				 tim14_val=0;
-				 __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-				 __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);
-		     Voltage_Test();
-		     Command_State=Store_State;         //达到起始点，进入缓存地图的状态。
-		     Motor_Status=Setup;
+						 tim13_val=0;
+						 tim14_val=0;
+						 __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
+						 __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);
+						 Voltage_Test();
+						 Command_State=Store_State;         //达到起始点，进入缓存地图的状态。
+						 Motor_Status=Setup;
 		    break;
 		default:
         break;			
@@ -203,6 +209,48 @@ void Motor_Ruku(void)
 
 void Ahead_Trailing(void)
 {
+	static int num=0,count1=0,count2=0;
+	if((protect_ahead==0)||(protect_back==0))                     //检测安全触边
+	{
+		num++;
+		if(num>2000)
+		{
+		 if((protect_ahead==0)||(protect_back)==0)
+		 {
+		    tim13_val=0;
+			  tim14_val=0;
+			 __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
+			 __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);//关闭
+			 LED_ON;
+		 }
+		}
+	}
+	else
+		{
+			num=0;
+		if((Ahead_Senor_1==1)&&(Ahead_Senor_2==1)&&(Ahead_Senor_3==1)&&(Ahead_Senor_4==1)&&(Ahead_Senor_5==1))
+		{
+		count1++;
+			if(count1>TEST_TIM)
+			{			 
+				if((Ahead_Senor_1==1)&&(Ahead_Senor_2==1)&&(Ahead_Senor_3==0)&&(Ahead_Senor_4==1)&&(Ahead_Senor_5==1))
+				{
+					count2++;
+					if(count2>TEST_TIM)
+					{
+				  if((Ahead_Senor_1==1)&&(Ahead_Senor_2==1)&&(Ahead_Senor_3==0)&&(Ahead_Senor_4==1)&&(Ahead_Senor_5==1))  //冲出轨道停止
+				  {
+					  tim13_val=0;
+						tim14_val=0;
+					  __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
+					  __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);//关闭
+					  LED_ON;
+				  }
+				}
+			}
+			}
+		
+		}
 	  if((Ahead_Senor_1==1)&&(Ahead_Senor_2==1)&&(Ahead_Senor_3==0)&&(Ahead_Senor_4==1)&&(Ahead_Senor_5==1))
 		{
 		 	 tim13_val=20;
@@ -239,9 +287,52 @@ void Ahead_Trailing(void)
 			 __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);//左大偏
 		}
 }
+}
 
 void Back_Trailing(void)
 {
+	static int num=0,count1=0,count2=0;
+	if((protect_ahead==0)||(protect_back==0))               //检测安全触边
+	{
+		num++;
+		if(num>2000)
+		{
+		 if((protect_ahead==0)||(protect_back)==0)
+		 {
+		    tim13_val=0;
+			  tim14_val=0;
+			 __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
+			 __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);//关闭
+			 LED_ON;
+		 }
+		}
+	}
+	else
+		{
+			num=0;
+		if((Ahead_Senor_1==1)&&(Ahead_Senor_2==1)&&(Ahead_Senor_3==1)&&(Ahead_Senor_4==1)&&(Ahead_Senor_5==1))
+		{
+		count1++;
+			if(count1>TEST_TIM)
+			{			 
+				if((Ahead_Senor_1==1)&&(Ahead_Senor_2==1)&&(Ahead_Senor_3==0)&&(Ahead_Senor_4==1)&&(Ahead_Senor_5==1))
+				{
+					count2++;
+					if(count2>TEST_TIM)
+					{
+				  if((Ahead_Senor_1==1)&&(Ahead_Senor_2==1)&&(Ahead_Senor_3==0)&&(Ahead_Senor_4==1)&&(Ahead_Senor_5==1))     //冲出轨道停止
+				  {
+					  tim13_val=0;
+						tim14_val=0;
+					  __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
+					  __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);//关闭
+					  LED_ON;
+				  }
+				}
+			}
+			}
+		
+		}
 	  if((Back_Senor_1==1)&&(Back_Senor_2==1)&&(Back_Senor_3==0)&&(Back_Senor_4==1)&&(Back_Senor_5==1))
 		{
 		 	 tim13_val=20;
@@ -279,9 +370,9 @@ void Back_Trailing(void)
 		}  
 }
 
+}
 void Answer(void)                                  //回复给上位机RFID信息
-{
-                                                                                                                                                                                                                                                                                                                                             						
+{                                                                                                                                                                                                                                                                                                                                            						
 		HAL_UART_Transmit(&huart3,(u8*)Loc,3,1000);   //上报位置
 		HAL_UART_Transmit(&huart3,&Rx_buff_2[4],4,1000);
 }
@@ -373,7 +464,11 @@ void Find_Rfid_Match(void)
 
 void Stop(void)
 {
-		HAL_TIM_PWM_Stop(&htim13, TIM_CHANNEL_1);  //关闭PWM
-		HAL_TIM_PWM_Stop(&htim14, TIM_CHANNEL_1);  //关闭使能这两种方式都可以(关闭使能电机会自动锁住)
+		tim13_val=0;
+		tim14_val=0;
+		__HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
+		__HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);//关闭
 		Voltage_Test();
 }
+
+#endif

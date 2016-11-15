@@ -1,3 +1,5 @@
+#ifndef _C_ADCDMA_
+#define _C_ADCDMA_
 #include "all.h"
 /** NVIC Configuration
 */
@@ -18,6 +20,7 @@ void MX_NVIC_Init(void)
   /* DMA2_Stream0_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 2, 0);
   HAL_NVIC_EnableIRQ(DMA2_Stream0_IRQn);
+	if(HAL_ADC_Start_DMA(&hadc1,(uint32_t*)&uhADCxConvertedValue2,100)!=HAL_OK)Error_Handler();   //开启ADC——DMA传输通道
 	
 }
 
@@ -91,3 +94,5 @@ uint16_t ADC_Average(uint16_t *buff,uint16_t num,uint16_t threshold)
    temp=(uint16_t)(sigma/(num-threshold*2));
   return(temp);
 }
+
+#endif

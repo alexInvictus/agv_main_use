@@ -1,3 +1,5 @@
+#ifndef _C_KS103_
+#define _C_KS103_
 #include "all.h"
 /*Ä£ÄâiicÍ¨ĞÅ*/
 u8 KS103_ReadOneByte(u8 address, u8 reg)
@@ -42,3 +44,4 @@ u16 Wave_test(void)
 		return range*2;
 }
 
+#endif

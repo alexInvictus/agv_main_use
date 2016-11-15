@@ -1,3 +1,5 @@
+#ifndef _C_24CXX_
+#define _C_24CXX_
 #include "all.h"
 //////////////////////////////////////////////////////////////////////////////////	 
 //本程序只供学习使用，未经作者许可，不得用于其它任何用途
@@ -134,3 +136,5 @@ void AT24CXX_Write(u16 WriteAddr,u8 *pBuffer,u16 NumToWrite)
 		pBuffer++;
 	}
 }
+
+#endif

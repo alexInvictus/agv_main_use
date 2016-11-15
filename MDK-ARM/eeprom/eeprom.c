@@ -1,3 +1,5 @@
+#ifndef _C_EEPROM_
+#define _C_EEPROM_
 #include "all.h"
 
 void Eeprom_Read(void)
@@ -16,4 +18,4 @@ void Send_Id(void)
  HAL_UART_Transmit(&huart3,(u8*)Read_Id,3,1000);
 }	
 
-
+#endif
