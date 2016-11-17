@@ -20,8 +20,10 @@ void MX_NVIC_Init(void)
   /* DMA2_Stream0_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA2_Stream0_IRQn, 2, 0);
   HAL_NVIC_EnableIRQ(DMA2_Stream0_IRQn);
-	if(HAL_ADC_Start_DMA(&hadc1,(uint32_t*)&uhADCxConvertedValue2,100)!=HAL_OK)Error_Handler();   //开启ADC——DMA传输通道
 	
+	HAL_TIM_PWM_Start(&htim14, TIM_CHANNEL_1);                                                    //开启左轮PWM波
+	HAL_TIM_PWM_Start(&htim14, TIM_CHANNEL_1);                                                    //开启右轮PWM波
+	if(HAL_ADC_Start_DMA(&hadc1,(uint32_t*)&uhADCxConvertedValue2,100)!=HAL_OK)Error_Handler();   //开启ADC——DMA传输通道	
 }
 
 /* ADC1 init function */
@@ -57,7 +59,6 @@ void MX_ADC1_Init(void)
   {
     Error_Handler();
   }
-
 }
 /** 
   * Enable DMA controller clock

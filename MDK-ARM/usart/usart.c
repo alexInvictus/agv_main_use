@@ -191,7 +191,8 @@ void Uart_Store(void)                 //转存函数用Rx_buff_22来保存完好的地图
 	 }
 	 packflag_3=0;
 	 USART_RX_STA_3=0;
-	 n=(Rx_buff_33[5]-'0')*10+(Rx_buff_33[6]-'0');
+	 n=(Rx_buff_33[6]-'0')*10+(Rx_buff_33[7]-'0');
+	 printf("%d",n);
 	 Command_State=Analyse_State;
  }
 }	
@@ -209,9 +210,18 @@ void Uart_Analyse(void)
 	 {
 	   for(j=0;j<6;j++)
 		 {
-		  Track_buff[i][j]=Rx_buff_33[i*6+7+j];
+		  Track_buff[i][j]=Rx_buff_33[i*6+8+j];
 		 }
 	 }
 }
 
+void free_array(void)
+{	
+	  static int i=0;
+		for(i=0;i<n;i++) 
+		{ 
+		free(Track_buff[i]);   //释放二维数组
+		} 
+		free(Track_buff);      //释放一维数组
+}
 #endif

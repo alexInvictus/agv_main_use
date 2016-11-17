@@ -65,23 +65,23 @@ void Show_Static(void)
   Display(Line4,"电压:");
 }
 
-void Voltage_Test(void)    //电压检测
+void Voltage_Test(void)            //电压检测
 {
 	 int w;
     Display(Line4,"电压:");
-//    Temp=(ADC_ConvertedValue*48691)/4095;
+    Temp=(ADC_Average(uhADCxConvertedValue2,100,6)*830)/1024;
 	  Temp=Temp+200;
-    ptr[0]=Temp/10000;            //显示第一个字符
+    ptr[0]=Temp/10000;             //显示第一个字符
     ptr[1]=Temp%10000/1000;        //显示第二个字符
-    ptr[2]=10;                   //.	
+    ptr[2]=10;                     //.	
     ptr[3]=Temp%1000/100;          //显示第三个字符
-    ptr[4]=Temp%100/10;              //显示第四个字符
-    ptr[5]=11;                   //V
+    ptr[4]=Temp%100/10;            //显示第四个字符
+    ptr[5]=11;                     //V
     for(w=0;w<6;w++)
     {			
      LCD_Write(LCD_DATE,shuzi[ptr[w]]);
      delay_ms(3);
-     }
+    }
 }
 
 #endif

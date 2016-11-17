@@ -6,12 +6,12 @@
 #define USART_REC_LEN_1       200          //最大接收字节
 #define USART_REC_LEN_2       200          //最大接收字节
 #define USART_REC_LEN_3       200          //最大接收字节
-#define RXBUFFERSIZE   1
+#define RXBUFFERSIZE           1           //接受字节数（中间）
 //=====================================================
 //                 按键定义、报警定义
 //=====================================================
-#define Key_Start         HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_2)
-#define Key_Stop          HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_3)
+#define Key_Start         0       //HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_2)
+#define Key_Stop          0       //HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_3)
 #define protect_ahead     HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_14)
 #define protect_back      HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_15)
 //=====================================================
@@ -32,8 +32,8 @@
 //                 ADC地址
 //=====================================================
 #define ADC1_DR_Address    ((u32)0x4001244C)
-#define LCD_CMD       (u32)0xf8000000 						//
-#define LCD_DATE      (u32)0xfa000000 						//
+#define LCD_CMD            (u32)0xf8000000 						//
+#define LCD_DATE           (u32)0xfa000000 						//
 //=====================================================
 //                 128*64的显示屏的行首地址
 //=====================================================
@@ -59,7 +59,7 @@
 //=====================================================
 //                 转弯延迟的时间
 //=====================================================
-#define Turn_time   6500        //6500毫秒
+#define Turn_time   6500         //6500毫秒
 #define TEST_TIM    65000        //65000次检测到就停止
 //=====================================================
 //                 LED的操作
@@ -89,19 +89,23 @@ void Send_Id(void);                             //发送id号给中控系统
 void Motor_Ahead_Wait(void);                    //前进到取料点模式
 void Motor_Ahead(void);                         //前进模式
 void Motor_Back(void);                          //后退模式
-void Motor_Ruku(void);                       //后退模式--直接去起始点
+void Motor_Ruku(void);                          //后退模式--直接去起始点
 void Ahead_Trailing(void);                      //前进循迹走
 void Back_Trailing(void);                       //后退循迹走
 void Answer(void);                              //找到之后报给中控
 void Find_Rfid(void);                           //寻找RFID卡
-void Find_Rfid_Match(void);                           //匹配RFID的函数
-void Stop(void);
+void Find_Rfid_Match(void);                     //匹配RFID的函数
+void Stop(void);                                //停止
+void Set_Motor(int left,int right);             //设置电机的速度
+void free_array(void);                          //释放数组内存的函数
+void Set_Acc(int target);                       //加速设置函数 target为目标速度
+void Set_Slowdown(int target);                  //减速设置函数 target为目标速度
 /*显示屏的操作的函数*/
 void LCD_init(void);
 void Display(u8 addr,u8 *hz);
 void LCD_Write(u32 cmd,u8 ddata);
 void Voltage_Test(void); 
-uint16_t ADC_Average(uint16_t *buff,uint16_t num,uint16_t threshold);
+uint16_t ADC_Average(uint16_t *buff,uint16_t num,uint16_t threshold);    //ADC采集滤波函数
 #endif
 
 

@@ -32,7 +32,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x57DFAA05)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x57DFAA05)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x57DFAA05)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x57DFAA05)
-F (.\System\delay\delay.c)(0x57456CB6)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I.\System\delay -I.\System\sys -I.\usart -I..\wave-iic\ks103 -I..\wave-iic\myiic -I.\pwm -I..\MDK-ARM -I.\24c02 -I.\lcd --C99-I C:\Users\peng02.li\Desktop\最新程序--主程序框架的编写11-10\MDK-ARM\RTE-I D:\MDK5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\MDK5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F429_439xx -DUSE_HAL_DRIVER -DSTM32F429xx-o usart\delay.o --omf_browse usart\delay.crf --depend usart\delay.d)
+F (.\System\delay\delay.c)(0x582AD664)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I.\System\delay -I.\System\sys -I.\usart -I..\wave-iic\ks103 -I..\wave-iic\myiic -I.\pwm -I..\MDK-ARM -I.\24c02 -I.\lcd --C99-I C:\Users\peng02.li\Desktop\最新程序--主程序框架的编写11-10\MDK-ARM\RTE-I D:\MDK5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\MDK5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F429_439xx -DUSE_HAL_DRIVER -DSTM32F429xx-o usart\delay.o --omf_browse usart\delay.crf --depend usart\delay.d)
 I (System\delay\delay.h)(0x5710F970)
 I (.\System\sys\sys.h)(0x5745175C)
 I (../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h)(0x57DFA9DD)
@@ -101,7 +101,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x57DFAA05)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x57DFAA05)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x57DFAA05)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x57DFAA05)
-F (.\usart\usart.c)(0x582AB797)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I.\System\delay -I.\System\sys -I.\usart -I..\wave-iic\ks103 -I..\wave-iic\myiic -I.\pwm -I..\MDK-ARM -I.\24c02 -I.\lcd --C99-I C:\Users\peng02.li\Desktop\最新程序--主程序框架的编写11-10\MDK-ARM\RTE-I D:\MDK5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\MDK5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F429_439xx -DUSE_HAL_DRIVER -DSTM32F429xx-o usart\usart.o --omf_browse usart\usart.crf --depend usart\usart.d)
+F (.\usart\usart.c)(0x582C3354)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I.\System\delay -I.\System\sys -I.\usart -I..\wave-iic\ks103 -I..\wave-iic\myiic -I.\pwm -I..\MDK-ARM -I.\24c02 -I.\lcd --C99-I C:\Users\peng02.li\Desktop\最新程序--主程序框架的编写11-10\MDK-ARM\RTE-I D:\MDK5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\MDK5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F429_439xx -DUSE_HAL_DRIVER -DSTM32F429xx-o usart\usart.o --omf_browse usart\usart.crf --depend usart\usart.d)
 I (..\MDK-ARM\all.h)(0x5822FBBF)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x57DFAA04)
 I (../Inc/stm32f4xx_hal_conf.h)(0x58241451)
@@ -138,13 +138,13 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x57DFAA05)
 I (.\System\delay\delay.h)(0x5710F970)
 I (.\System\sys\sys.h)(0x5745175C)
 I (D:\MDK5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-I (..\MDK-ARM\define.h)(0x582AD020)
-I (..\MDK-ARM\vardef.h)(0x582AAEEC)
+I (..\MDK-ARM\define.h)(0x582C3DEF)
+I (..\MDK-ARM\vardef.h)(0x582C3C87)
 I (..\wave-iic\ks103\ks103.h)(0x582039CA)
 I (..\wave-iic\myiic\myiic2.h)(0x58217FAF)
 I (.\24c02\myiic.h)(0x58217FAF)
 I (.\24c02\24cxx.h)(0x5710F979)
-F (..\wave-iic\ks103\ks103.c)(0x582AB797)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I.\System\delay -I.\System\sys -I.\usart -I..\wave-iic\ks103 -I..\wave-iic\myiic -I.\pwm -I..\MDK-ARM -I.\24c02 -I.\lcd --C99-I C:\Users\peng02.li\Desktop\最新程序--主程序框架的编写11-10\MDK-ARM\RTE-I D:\MDK5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\MDK5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F429_439xx -DUSE_HAL_DRIVER -DSTM32F429xx-o usart\ks103.o --omf_browse usart\ks103.crf --depend usart\ks103.d)
+F (..\wave-iic\ks103\ks103.c)(0x582BEAB1)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I.\System\delay -I.\System\sys -I.\usart -I..\wave-iic\ks103 -I..\wave-iic\myiic -I.\pwm -I..\MDK-ARM -I.\24c02 -I.\lcd --C99-I C:\Users\peng02.li\Desktop\最新程序--主程序框架的编写11-10\MDK-ARM\RTE-I D:\MDK5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\MDK5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F429_439xx -DUSE_HAL_DRIVER -DSTM32F429xx-o usart\ks103.o --omf_browse usart\ks103.crf --depend usart\ks103.d)
 I (..\MDK-ARM\all.h)(0x5822FBBF)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x57DFAA04)
 I (../Inc/stm32f4xx_hal_conf.h)(0x58241451)
@@ -181,13 +181,13 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x57DFAA05)
 I (.\System\delay\delay.h)(0x5710F970)
 I (.\System\sys\sys.h)(0x5745175C)
 I (D:\MDK5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-I (..\MDK-ARM\define.h)(0x582AD020)
-I (..\MDK-ARM\vardef.h)(0x582AAEEC)
+I (..\MDK-ARM\define.h)(0x582C3DEF)
+I (..\MDK-ARM\vardef.h)(0x582C3C87)
 I (..\wave-iic\ks103\ks103.h)(0x582039CA)
 I (..\wave-iic\myiic\myiic2.h)(0x58217FAF)
 I (.\24c02\myiic.h)(0x58217FAF)
 I (.\24c02\24cxx.h)(0x5710F979)
-F (..\wave-iic\myiic\myiic2.c)(0x582AB797)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I.\System\delay -I.\System\sys -I.\usart -I..\wave-iic\ks103 -I..\wave-iic\myiic -I.\pwm -I..\MDK-ARM -I.\24c02 -I.\lcd --C99-I C:\Users\peng02.li\Desktop\最新程序--主程序框架的编写11-10\MDK-ARM\RTE-I D:\MDK5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\MDK5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F429_439xx -DUSE_HAL_DRIVER -DSTM32F429xx-o usart\myiic2.o --omf_browse usart\myiic2.crf --depend usart\myiic2.d)
+F (..\wave-iic\myiic\myiic2.c)(0x582BEAB0)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I.\System\delay -I.\System\sys -I.\usart -I..\wave-iic\ks103 -I..\wave-iic\myiic -I.\pwm -I..\MDK-ARM -I.\24c02 -I.\lcd --C99-I C:\Users\peng02.li\Desktop\最新程序--主程序框架的编写11-10\MDK-ARM\RTE-I D:\MDK5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\MDK5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F429_439xx -DUSE_HAL_DRIVER -DSTM32F429xx-o usart\myiic2.o --omf_browse usart\myiic2.crf --depend usart\myiic2.d)
 I (..\MDK-ARM\all.h)(0x5822FBBF)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x57DFAA04)
 I (../Inc/stm32f4xx_hal_conf.h)(0x58241451)
@@ -224,8 +224,8 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x57DFAA05)
 I (.\System\delay\delay.h)(0x5710F970)
 I (.\System\sys\sys.h)(0x5745175C)
 I (D:\MDK5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-I (..\MDK-ARM\define.h)(0x582AD020)
-I (..\MDK-ARM\vardef.h)(0x582AAEEC)
+I (..\MDK-ARM\define.h)(0x582C3DEF)
+I (..\MDK-ARM\vardef.h)(0x582C3C87)
 I (..\wave-iic\ks103\ks103.h)(0x582039CA)
 I (..\wave-iic\myiic\myiic2.h)(0x58217FAF)
 I (.\24c02\myiic.h)(0x58217FAF)
@@ -267,13 +267,13 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x57DFAA05)
 I (.\System\delay\delay.h)(0x5710F970)
 I (.\System\sys\sys.h)(0x5745175C)
 I (D:\MDK5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-I (..\MDK-ARM\define.h)(0x582AD020)
-I (..\MDK-ARM\vardef.h)(0x582AAEEC)
+I (..\MDK-ARM\define.h)(0x582C3DEF)
+I (..\MDK-ARM\vardef.h)(0x582C3C87)
 I (..\wave-iic\ks103\ks103.h)(0x582039CA)
 I (..\wave-iic\myiic\myiic2.h)(0x58217FAF)
 I (.\24c02\myiic.h)(0x58217FAF)
 I (.\24c02\24cxx.h)(0x5710F979)
-F (.\init\pwm.c)(0x582AAEEC)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I.\System\delay -I.\System\sys -I.\usart -I..\wave-iic\ks103 -I..\wave-iic\myiic -I.\pwm -I..\MDK-ARM -I.\24c02 -I.\lcd --C99-I C:\Users\peng02.li\Desktop\最新程序--主程序框架的编写11-10\MDK-ARM\RTE-I D:\MDK5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\MDK5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F429_439xx -DUSE_HAL_DRIVER -DSTM32F429xx-o usart\pwm.o --omf_browse usart\pwm.crf --depend usart\pwm.d)
+F (.\init\pwm.c)(0x582BC521)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I.\System\delay -I.\System\sys -I.\usart -I..\wave-iic\ks103 -I..\wave-iic\myiic -I.\pwm -I..\MDK-ARM -I.\24c02 -I.\lcd --C99-I C:\Users\peng02.li\Desktop\最新程序--主程序框架的编写11-10\MDK-ARM\RTE-I D:\MDK5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\MDK5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F429_439xx -DUSE_HAL_DRIVER -DSTM32F429xx-o usart\pwm.o --omf_browse usart\pwm.crf --depend usart\pwm.d)
 I (..\MDK-ARM\all.h)(0x5822FBBF)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x57DFAA04)
 I (../Inc/stm32f4xx_hal_conf.h)(0x58241451)
@@ -310,13 +310,13 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x57DFAA05)
 I (.\System\delay\delay.h)(0x5710F970)
 I (.\System\sys\sys.h)(0x5745175C)
 I (D:\MDK5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-I (..\MDK-ARM\define.h)(0x582AD020)
-I (..\MDK-ARM\vardef.h)(0x582AAEEC)
+I (..\MDK-ARM\define.h)(0x582C3DEF)
+I (..\MDK-ARM\vardef.h)(0x582C3C87)
 I (..\wave-iic\ks103\ks103.h)(0x582039CA)
 I (..\wave-iic\myiic\myiic2.h)(0x58217FAF)
 I (.\24c02\myiic.h)(0x58217FAF)
 I (.\24c02\24cxx.h)(0x5710F979)
-F (.\init\gpio_init.c)(0x582AD020)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I.\System\delay -I.\System\sys -I.\usart -I..\wave-iic\ks103 -I..\wave-iic\myiic -I.\pwm -I..\MDK-ARM -I.\24c02 -I.\lcd --C99-I C:\Users\peng02.li\Desktop\最新程序--主程序框架的编写11-10\MDK-ARM\RTE-I D:\MDK5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\MDK5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F429_439xx -DUSE_HAL_DRIVER -DSTM32F429xx-o usart\gpio_init.o --omf_browse usart\gpio_init.crf --depend usart\gpio_init.d)
+F (.\init\gpio_init.c)(0x582BFF42)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I.\System\delay -I.\System\sys -I.\usart -I..\wave-iic\ks103 -I..\wave-iic\myiic -I.\pwm -I..\MDK-ARM -I.\24c02 -I.\lcd --C99-I C:\Users\peng02.li\Desktop\最新程序--主程序框架的编写11-10\MDK-ARM\RTE-I D:\MDK5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\MDK5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F429_439xx -DUSE_HAL_DRIVER -DSTM32F429xx-o usart\gpio_init.o --omf_browse usart\gpio_init.crf --depend usart\gpio_init.d)
 I (..\MDK-ARM\all.h)(0x5822FBBF)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x57DFAA04)
 I (../Inc/stm32f4xx_hal_conf.h)(0x58241451)
@@ -353,8 +353,8 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x57DFAA05)
 I (.\System\delay\delay.h)(0x5710F970)
 I (.\System\sys\sys.h)(0x5745175C)
 I (D:\MDK5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-I (..\MDK-ARM\define.h)(0x582AD020)
-I (..\MDK-ARM\vardef.h)(0x582AAEEC)
+I (..\MDK-ARM\define.h)(0x582C3DEF)
+I (..\MDK-ARM\vardef.h)(0x582C3C87)
 I (..\wave-iic\ks103\ks103.h)(0x582039CA)
 I (..\wave-iic\myiic\myiic2.h)(0x58217FAF)
 I (.\24c02\myiic.h)(0x58217FAF)
@@ -396,13 +396,13 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x57DFAA05)
 I (.\System\delay\delay.h)(0x5710F970)
 I (.\System\sys\sys.h)(0x5745175C)
 I (D:\MDK5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-I (..\MDK-ARM\define.h)(0x582AD020)
-I (..\MDK-ARM\vardef.h)(0x582AAEEC)
+I (..\MDK-ARM\define.h)(0x582C3DEF)
+I (..\MDK-ARM\vardef.h)(0x582C3C87)
 I (..\wave-iic\ks103\ks103.h)(0x582039CA)
 I (..\wave-iic\myiic\myiic2.h)(0x58217FAF)
 I (.\24c02\myiic.h)(0x58217FAF)
 I (.\24c02\24cxx.h)(0x5710F979)
-F (.\init\adc_dma.c)(0x582AD020)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I.\System\delay -I.\System\sys -I.\usart -I..\wave-iic\ks103 -I..\wave-iic\myiic -I.\pwm -I..\MDK-ARM -I.\24c02 -I.\lcd --C99-I C:\Users\peng02.li\Desktop\最新程序--主程序框架的编写11-10\MDK-ARM\RTE-I D:\MDK5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\MDK5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F429_439xx -DUSE_HAL_DRIVER -DSTM32F429xx-o usart\adc_dma.o --omf_browse usart\adc_dma.crf --depend usart\adc_dma.d)
+F (.\init\adc_dma.c)(0x582BF7D1)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I.\System\delay -I.\System\sys -I.\usart -I..\wave-iic\ks103 -I..\wave-iic\myiic -I.\pwm -I..\MDK-ARM -I.\24c02 -I.\lcd --C99-I C:\Users\peng02.li\Desktop\最新程序--主程序框架的编写11-10\MDK-ARM\RTE-I D:\MDK5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\MDK5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F429_439xx -DUSE_HAL_DRIVER -DSTM32F429xx-o usart\adc_dma.o --omf_browse usart\adc_dma.crf --depend usart\adc_dma.d)
 I (..\MDK-ARM\all.h)(0x5822FBBF)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x57DFAA04)
 I (../Inc/stm32f4xx_hal_conf.h)(0x58241451)
@@ -439,13 +439,13 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x57DFAA05)
 I (.\System\delay\delay.h)(0x5710F970)
 I (.\System\sys\sys.h)(0x5745175C)
 I (D:\MDK5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-I (..\MDK-ARM\define.h)(0x582AD020)
-I (..\MDK-ARM\vardef.h)(0x582AAEEC)
+I (..\MDK-ARM\define.h)(0x582C3DEF)
+I (..\MDK-ARM\vardef.h)(0x582C3C87)
 I (..\wave-iic\ks103\ks103.h)(0x582039CA)
 I (..\wave-iic\myiic\myiic2.h)(0x58217FAF)
 I (.\24c02\myiic.h)(0x58217FAF)
 I (.\24c02\24cxx.h)(0x5710F979)
-F (.\eeprom\eeprom.c)(0x582AB797)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I.\System\delay -I.\System\sys -I.\usart -I..\wave-iic\ks103 -I..\wave-iic\myiic -I.\pwm -I..\MDK-ARM -I.\24c02 -I.\lcd --C99-I C:\Users\peng02.li\Desktop\最新程序--主程序框架的编写11-10\MDK-ARM\RTE-I D:\MDK5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\MDK5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F429_439xx -DUSE_HAL_DRIVER -DSTM32F429xx-o usart\eeprom.o --omf_browse usart\eeprom.crf --depend usart\eeprom.d)
+F (.\eeprom\eeprom.c)(0x582BC521)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I.\System\delay -I.\System\sys -I.\usart -I..\wave-iic\ks103 -I..\wave-iic\myiic -I.\pwm -I..\MDK-ARM -I.\24c02 -I.\lcd --C99-I C:\Users\peng02.li\Desktop\最新程序--主程序框架的编写11-10\MDK-ARM\RTE-I D:\MDK5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\MDK5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F429_439xx -DUSE_HAL_DRIVER -DSTM32F429xx-o usart\eeprom.o --omf_browse usart\eeprom.crf --depend usart\eeprom.d)
 I (..\MDK-ARM\all.h)(0x5822FBBF)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x57DFAA04)
 I (../Inc/stm32f4xx_hal_conf.h)(0x58241451)
@@ -482,13 +482,13 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x57DFAA05)
 I (.\System\delay\delay.h)(0x5710F970)
 I (.\System\sys\sys.h)(0x5745175C)
 I (D:\MDK5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-I (..\MDK-ARM\define.h)(0x582AD020)
-I (..\MDK-ARM\vardef.h)(0x582AAEEC)
+I (..\MDK-ARM\define.h)(0x582C3DEF)
+I (..\MDK-ARM\vardef.h)(0x582C3C87)
 I (..\wave-iic\ks103\ks103.h)(0x582039CA)
 I (..\wave-iic\myiic\myiic2.h)(0x58217FAF)
 I (.\24c02\myiic.h)(0x58217FAF)
 I (.\24c02\24cxx.h)(0x5710F979)
-F (.\motor\motor.c)(0x582AD0FE)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I.\System\delay -I.\System\sys -I.\usart -I..\wave-iic\ks103 -I..\wave-iic\myiic -I.\pwm -I..\MDK-ARM -I.\24c02 -I.\lcd --C99-I C:\Users\peng02.li\Desktop\最新程序--主程序框架的编写11-10\MDK-ARM\RTE-I D:\MDK5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\MDK5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F429_439xx -DUSE_HAL_DRIVER -DSTM32F429xx-o usart\motor.o --omf_browse usart\motor.crf --depend usart\motor.d)
+F (.\motor\motor.c)(0x582C3DC4)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I.\System\delay -I.\System\sys -I.\usart -I..\wave-iic\ks103 -I..\wave-iic\myiic -I.\pwm -I..\MDK-ARM -I.\24c02 -I.\lcd --C99-I C:\Users\peng02.li\Desktop\最新程序--主程序框架的编写11-10\MDK-ARM\RTE-I D:\MDK5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\MDK5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F429_439xx -DUSE_HAL_DRIVER -DSTM32F429xx-o usart\motor.o --omf_browse usart\motor.crf --depend usart\motor.d)
 I (..\MDK-ARM\all.h)(0x5822FBBF)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x57DFAA04)
 I (../Inc/stm32f4xx_hal_conf.h)(0x58241451)
@@ -525,13 +525,13 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x57DFAA05)
 I (.\System\delay\delay.h)(0x5710F970)
 I (.\System\sys\sys.h)(0x5745175C)
 I (D:\MDK5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-I (..\MDK-ARM\define.h)(0x582AD020)
-I (..\MDK-ARM\vardef.h)(0x582AAEEC)
+I (..\MDK-ARM\define.h)(0x582C3DEF)
+I (..\MDK-ARM\vardef.h)(0x582C3C87)
 I (..\wave-iic\ks103\ks103.h)(0x582039CA)
 I (..\wave-iic\myiic\myiic2.h)(0x58217FAF)
 I (.\24c02\myiic.h)(0x58217FAF)
 I (.\24c02\24cxx.h)(0x5710F979)
-F (.\24c02\24cxx.c)(0x582AB797)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I.\System\delay -I.\System\sys -I.\usart -I..\wave-iic\ks103 -I..\wave-iic\myiic -I.\pwm -I..\MDK-ARM -I.\24c02 -I.\lcd --C99-I C:\Users\peng02.li\Desktop\最新程序--主程序框架的编写11-10\MDK-ARM\RTE-I D:\MDK5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\MDK5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F429_439xx -DUSE_HAL_DRIVER -DSTM32F429xx-o usart\24cxx.o --omf_browse usart\24cxx.crf --depend usart\24cxx.d)
+F (.\24c02\24cxx.c)(0x582BCA03)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I.\System\delay -I.\System\sys -I.\usart -I..\wave-iic\ks103 -I..\wave-iic\myiic -I.\pwm -I..\MDK-ARM -I.\24c02 -I.\lcd --C99-I C:\Users\peng02.li\Desktop\最新程序--主程序框架的编写11-10\MDK-ARM\RTE-I D:\MDK5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\MDK5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F429_439xx -DUSE_HAL_DRIVER -DSTM32F429xx-o usart\24cxx.o --omf_browse usart\24cxx.crf --depend usart\24cxx.d)
 I (..\MDK-ARM\all.h)(0x5822FBBF)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x57DFAA04)
 I (../Inc/stm32f4xx_hal_conf.h)(0x58241451)
@@ -568,8 +568,8 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x57DFAA05)
 I (.\System\delay\delay.h)(0x5710F970)
 I (.\System\sys\sys.h)(0x5745175C)
 I (D:\MDK5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-I (..\MDK-ARM\define.h)(0x582AD020)
-I (..\MDK-ARM\vardef.h)(0x582AAEEC)
+I (..\MDK-ARM\define.h)(0x582C3DEF)
+I (..\MDK-ARM\vardef.h)(0x582C3C87)
 I (..\wave-iic\ks103\ks103.h)(0x582039CA)
 I (..\wave-iic\myiic\myiic2.h)(0x58217FAF)
 I (.\24c02\myiic.h)(0x58217FAF)
@@ -611,13 +611,13 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x57DFAA05)
 I (.\System\delay\delay.h)(0x5710F970)
 I (.\System\sys\sys.h)(0x5745175C)
 I (D:\MDK5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-I (..\MDK-ARM\define.h)(0x582AD020)
-I (..\MDK-ARM\vardef.h)(0x582AAEEC)
+I (..\MDK-ARM\define.h)(0x582C3DEF)
+I (..\MDK-ARM\vardef.h)(0x582C3C87)
 I (..\wave-iic\ks103\ks103.h)(0x582039CA)
 I (..\wave-iic\myiic\myiic2.h)(0x58217FAF)
 I (.\24c02\myiic.h)(0x58217FAF)
 I (.\24c02\24cxx.h)(0x5710F979)
-F (.\lcd\LCD_Driver.c)(0x582AB7C3)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I.\System\delay -I.\System\sys -I.\usart -I..\wave-iic\ks103 -I..\wave-iic\myiic -I.\pwm -I..\MDK-ARM -I.\24c02 -I.\lcd --C99-I C:\Users\peng02.li\Desktop\最新程序--主程序框架的编写11-10\MDK-ARM\RTE-I D:\MDK5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\MDK5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F429_439xx -DUSE_HAL_DRIVER -DSTM32F429xx-o usart\lcd_driver.o --omf_browse usart\lcd_driver.crf --depend usart\lcd_driver.d)
+F (.\lcd\LCD_Driver.c)(0x582BCA03)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I.\System\delay -I.\System\sys -I.\usart -I..\wave-iic\ks103 -I..\wave-iic\myiic -I.\pwm -I..\MDK-ARM -I.\24c02 -I.\lcd --C99-I C:\Users\peng02.li\Desktop\最新程序--主程序框架的编写11-10\MDK-ARM\RTE-I D:\MDK5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\MDK5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F429_439xx -DUSE_HAL_DRIVER -DSTM32F429xx-o usart\lcd_driver.o --omf_browse usart\lcd_driver.crf --depend usart\lcd_driver.d)
 I (..\MDK-ARM\all.h)(0x5822FBBF)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x57DFAA04)
 I (../Inc/stm32f4xx_hal_conf.h)(0x58241451)
@@ -654,8 +654,8 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x57DFAA05)
 I (.\System\delay\delay.h)(0x5710F970)
 I (.\System\sys\sys.h)(0x5745175C)
 I (D:\MDK5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-I (..\MDK-ARM\define.h)(0x582AD020)
-I (..\MDK-ARM\vardef.h)(0x582AAEEC)
+I (..\MDK-ARM\define.h)(0x582C3DEF)
+I (..\MDK-ARM\vardef.h)(0x582C3C87)
 I (..\wave-iic\ks103\ks103.h)(0x582039CA)
 I (..\wave-iic\myiic\myiic2.h)(0x58217FAF)
 I (.\24c02\myiic.h)(0x58217FAF)
@@ -1256,7 +1256,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x57DFAA05)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x57DFAA05)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x57DFAA05)
 I (../Inc/stm32f4xx_it.h)(0x58241451)
-F (../Src/stm32f4xx_hal_msp.c)(0x582989BC)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I.\System\delay -I.\System\sys -I.\usart -I..\wave-iic\ks103 -I..\wave-iic\myiic -I.\pwm -I..\MDK-ARM -I.\24c02 -I.\lcd --C99-I C:\Users\peng02.li\Desktop\最新程序--主程序框架的编写11-10\MDK-ARM\RTE-I D:\MDK5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\MDK5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F429_439xx -DUSE_HAL_DRIVER -DSTM32F429xx-o usart\stm32f4xx_hal_msp.o --omf_browse usart\stm32f4xx_hal_msp.crf --depend usart\stm32f4xx_hal_msp.d)
+F (../Src/stm32f4xx_hal_msp.c)(0x582C324F)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I.\System\delay -I.\System\sys -I.\usart -I..\wave-iic\ks103 -I..\wave-iic\myiic -I.\pwm -I..\MDK-ARM -I.\24c02 -I.\lcd --C99-I C:\Users\peng02.li\Desktop\最新程序--主程序框架的编写11-10\MDK-ARM\RTE-I D:\MDK5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\MDK5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F429_439xx -DUSE_HAL_DRIVER -DSTM32F429xx-o usart\stm32f4xx_hal_msp.o --omf_browse usart\stm32f4xx_hal_msp.crf --depend usart\stm32f4xx_hal_msp.d)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x57DFAA04)
 I (../Inc/stm32f4xx_hal_conf.h)(0x58241451)
 I (../Inc/mxconstants.h)(0x58241451)
@@ -1289,7 +1289,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x57DFAA05)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h)(0x57DFAA05)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h)(0x57DFAA05)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x57DFAA05)
-F (../Src/main.c)(0x582AD020)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I.\System\delay -I.\System\sys -I.\usart -I..\wave-iic\ks103 -I..\wave-iic\myiic -I.\pwm -I..\MDK-ARM -I.\24c02 -I.\lcd --C99-I C:\Users\peng02.li\Desktop\最新程序--主程序框架的编写11-10\MDK-ARM\RTE-I D:\MDK5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\MDK5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F429_439xx -DUSE_HAL_DRIVER -DSTM32F429xx-o usart\main.o --omf_browse usart\main.crf --depend usart\main.d)
+F (../Src/main.c)(0x582C3CD7)(-c --cpu Cortex-M4.fp -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I../Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Include -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I.\System\delay -I.\System\sys -I.\usart -I..\wave-iic\ks103 -I..\wave-iic\myiic -I.\pwm -I..\MDK-ARM -I.\24c02 -I.\lcd --C99-I C:\Users\peng02.li\Desktop\最新程序--主程序框架的编写11-10\MDK-ARM\RTE-I D:\MDK5\ARM\PACK\ARM\CMSIS\4.2.0\CMSIS\Include-I D:\MDK5\ARM\PACK\Keil\STM32F4xx_DFP\1.0.8\Device\Include-D__UVISION_VERSION="514" -D_RTE_ -DSTM32F429_439xx -DUSE_HAL_DRIVER -DSTM32F429xx-o usart\main.o --omf_browse usart\main.crf --depend usart\main.d)
 I (..\MDK-ARM\all.h)(0x5822FBBF)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x57DFAA04)
 I (../Inc/stm32f4xx_hal_conf.h)(0x58241451)
@@ -1326,8 +1326,8 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x57DFAA05)
 I (.\System\delay\delay.h)(0x5710F970)
 I (.\System\sys\sys.h)(0x5745175C)
 I (D:\MDK5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
-I (..\MDK-ARM\define.h)(0x582AD020)
-I (..\MDK-ARM\vardef.h)(0x582AAEEC)
+I (..\MDK-ARM\define.h)(0x582C3DEF)
+I (..\MDK-ARM\vardef.h)(0x582C3C87)
 I (..\wave-iic\ks103\ks103.h)(0x582039CA)
 I (..\wave-iic\myiic\myiic2.h)(0x58217FAF)
 I (.\24c02\myiic.h)(0x58217FAF)

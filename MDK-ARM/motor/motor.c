@@ -7,24 +7,23 @@ void Motor_Ahead_Wait(void)
   switch(Motor_Status)
 	{
 	  case Setup:
-			  tim13_val=20;
-		    tim14_val=20;
-		    __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-        __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);
-		    Motor_Status=Run;
+		   	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_4, GPIO_PIN_RESET);      //暂定前进
+        HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_RESET);  
+		    Set_Motor(430,430);
+		    printf("yes");
+		    delay_ms(1000);
+//		    Motor_Status=Run;
 		    break;
 		
 		case Run:
-              Find_Rfid();			
-			        Ahead_Trailing();
+         Find_Rfid();			
+			   Ahead_Trailing();
 		    break;
 				
 		case Arrive:
-			   tim13_val=0;
-		     tim14_val=0;
-			   __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-         __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);//控制占空比的方式。暂定为0时就是不走
+			   Set_Motor(460,460);//控制占空比的方式。暂定为0时就是不走
 		     Voltage_Test();
+		     free_array();
 		     Command_State=Store_State;                 //进入等待接收地图并且存地图的状态
 		     Motor_Status=Setup;
 		     break;
@@ -40,10 +39,9 @@ void Motor_Ahead(void)                                    //向前循迹
   switch(Motor_Status)
 	{
 	  case Setup:
-			  tim13_val=20;
-		    tim14_val=20;
-		    __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-        __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);
+			  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_4, GPIO_PIN_RESET);      //暂定前进
+        HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_RESET);
+			  Set_Motor(430,430);
 		    Motor_Status=Run;
 		    break;
 		
@@ -53,37 +51,25 @@ void Motor_Ahead(void)                                    //向前循迹
 		    break;
 		
 		case Left_90:
-			       tim13_val=0;
-		         tim14_val=150;
-		         __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-             __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);
+			       Set_Motor(0,150);
 		         delay_ms(Turn_time);
-		         tim13_val=0;
-						 tim14_val=0;
-						 __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-						 __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);
+		         Set_Motor(0,0);
 		         Motor_Status=Setup;
 		    break;
 	  
 		case Right_90:
-			       tim13_val=150;
-		         tim14_val=0;
-		         __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-             __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);
+			       Set_Motor(150,0);
 		         delay_ms(Turn_time);
-		         tim13_val=0;
-						 tim14_val=0;
-						 __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-						 __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);
+		         Set_Motor(0,0);
 		         Motor_Status=Setup;		
 		    break;
 		
 		case Arrive:
-						 tim13_val=0;
-						 tim14_val=0;
-						 __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-						 __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);
+						 Set_Motor(460,460);
 						 Voltage_Test();
+		         free_array();
+		         HAL_UART_Transmit(&huart3,(u8*)Tsk,4,1000);                        
+					   HAL_UART_Transmit(&huart3,(u8*)Bm,3,1000);          //发送请求返回地图的指令
 						 Command_State=Store_State;
 						 Motor_Status=Setup;
 		    break;
@@ -98,10 +84,9 @@ void Motor_Back(void)                                           //返回的循迹函数
   switch(Motor_Status)
 	{
 	  case Setup:
-        tim13_val=20;
-		    tim14_val=20;
-		    __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-        __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);
+			  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_4, GPIO_PIN_SET);    //暂定反向
+        HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_SET);
+        Set_Motor(430,430);
 		    Motor_Status=Run;
 		    break;
 		
@@ -112,36 +97,24 @@ void Motor_Back(void)                                           //返回的循迹函数
 		    break;
 		
 		case Left_90:
-			       tim13_val=0;
-		         tim14_val=150;
-		         __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-             __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);
+			       Set_Motor(0,150);
 		         delay_ms(Turn_time);
-		         tim13_val=0;
-						 tim14_val=0;
-						 __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-						 __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);
+		         Set_Motor(0,0);
 		         Motor_Status=Setup;	
 		    break;
 	  
 		case Right_90:
-			       tim13_val=150;
-		         tim14_val=0;
-		         __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-             __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);
+			       Set_Motor(150,0);
 		         delay_ms(Turn_time);
-		         tim13_val=0;
-						 tim14_val=0;
-						 __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-						 __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);
+		         Set_Motor(0,0);
 		         Motor_Status=Setup;			
 		    break;
 		case Arrive:
-						 tim13_val=0;
-						 tim14_val=0;
-						 __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-						 __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);
+						 Set_Motor(460,460);
 						 Voltage_Test();
+		         free_array();
+		         HAL_UART_Transmit(&huart3,(u8*)Tsk,4,1000);                        
+					   HAL_UART_Transmit(&huart3,(u8*)Rm,3,1000);          //发送请求入库地图的指令
 						 Command_State=Store_State;
 						 Motor_Status=Setup;
 		    break;			
@@ -155,10 +128,9 @@ void Motor_Ruku(void)                                     //入库的循迹函数
   switch(Motor_Status)
 	{
 	  case Setup:
-        tim13_val=20;
-		    tim14_val=20;
-		    __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-        __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);
+			  HAL_GPIO_WritePin(GPIOC, GPIO_PIN_4, GPIO_PIN_SET);     //暂定前进
+        HAL_GPIO_WritePin(GPIOC, GPIO_PIN_6, GPIO_PIN_SET);
+        Set_Motor(430,430);		    
 		    Motor_Status=Run;
 		    break;
 		
@@ -169,36 +141,22 @@ void Motor_Ruku(void)                                     //入库的循迹函数
 		    break;
 		
 		case Left_90:
-			       tim13_val=0;
-		         tim14_val=150;
-		         __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-             __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);
+			       Set_Motor(0,150);
 		         delay_ms(Turn_time);
-		         tim13_val=0;
-						 tim14_val=0;
-						 __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-						 __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);
+		         Set_Motor(0,0);
 		         Motor_Status=Setup;				
 		    break;
 	  
 		case Right_90:
-			       tim13_val=0;
-		         tim14_val=150;
-		         __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-             __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);
+			       Set_Motor(150,0);
 		         delay_ms(Turn_time);
-		         tim13_val=0;
-						 tim14_val=0;
-						 __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-						 __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);
+		         Set_Motor(0,0);
 		         Motor_Status=Setup;			
 		    break;
 		case Arrive:
-						 tim13_val=0;
-						 tim14_val=0;
-						 __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-						 __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);
+						 Set_Motor(460,460);
 						 Voltage_Test();
+		         free_array();
 						 Command_State=Store_State;         //达到起始点，进入缓存地图的状态。
 						 Motor_Status=Setup;
 		    break;
@@ -217,11 +175,8 @@ void Ahead_Trailing(void)
 		{
 		 if((protect_ahead==0)||(protect_back)==0)
 		 {
-		    tim13_val=0;
-			  tim14_val=0;
-			 __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-			 __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);//关闭
-			 LED_ON;
+		    Set_Motor(460,460);//关闭
+			  LED_ON;
 		 }
 		}
 	}
@@ -240,51 +195,32 @@ void Ahead_Trailing(void)
 					{
 				  if((Ahead_Senor_1==1)&&(Ahead_Senor_2==1)&&(Ahead_Senor_3==0)&&(Ahead_Senor_4==1)&&(Ahead_Senor_5==1))  //冲出轨道停止
 				  {
-					  tim13_val=0;
-						tim14_val=0;
-					  __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-					  __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);//关闭
+					  Set_Motor(460,460);//关闭
 					  LED_ON;
 				  }
-				}
-			}
-			}
-		
+				  }
+			  }
+			}		
 		}
 	  if((Ahead_Senor_1==1)&&(Ahead_Senor_2==1)&&(Ahead_Senor_3==0)&&(Ahead_Senor_4==1)&&(Ahead_Senor_5==1))
 		{
-		 	 tim13_val=20;
-			 tim14_val=20;
-			 __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-			 __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);//直行
+		 Set_Motor(20,20);//直行
 		}
 		else if((Ahead_Senor_1==1)&&(Ahead_Senor_2==0)&&(Ahead_Senor_4==1)&&(Ahead_Senor_5==1))
 		{
-		 	 tim13_val=30;
-			 tim14_val=20;
-			 __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-			 __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);//右小偏
+		 	 Set_Motor(30,20);//右小偏
 		}
 		else if((Ahead_Senor_1==1)&&(Ahead_Senor_2==1)&&(Ahead_Senor_4==0)&&(Ahead_Senor_5==1))
 		{
-		 	 tim13_val=20;
-			 tim14_val=30;
-			 __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-			 __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);//左小偏
+		 	Set_Motor(20,30);//左小偏
 		}
 		else if((Ahead_Senor_1==0)&&(Ahead_Senor_2==1)&&(Ahead_Senor_4==1)&&(Ahead_Senor_5==1))
 		{
-		 	 tim13_val=40;
-			 tim14_val=20;
-			 __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-			 __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);//右大偏
+		 Set_Motor(40,20);;//右大偏
 		}
 		else if((Ahead_Senor_1==1)&&(Ahead_Senor_2==1)&&(Ahead_Senor_4==1)&&(Ahead_Senor_5==0))
 		{
-		 	 tim13_val=20;
-			 tim14_val=40;
-			 __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-			 __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);//左大偏
+		Set_Motor(20,40);//左大偏
 		}
 }
 }
@@ -299,10 +235,7 @@ void Back_Trailing(void)
 		{
 		 if((protect_ahead==0)||(protect_back)==0)
 		 {
-		    tim13_val=0;
-			  tim14_val=0;
-			 __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-			 __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);//关闭
+		    Set_Motor(460,460);//关闭
 			 LED_ON;
 		 }
 		}
@@ -322,10 +255,7 @@ void Back_Trailing(void)
 					{
 				  if((Ahead_Senor_1==1)&&(Ahead_Senor_2==1)&&(Ahead_Senor_3==0)&&(Ahead_Senor_4==1)&&(Ahead_Senor_5==1))     //冲出轨道停止
 				  {
-					  tim13_val=0;
-						tim14_val=0;
-					  __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-					  __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);//关闭
+					  Set_Motor(0,0);//关闭
 					  LED_ON;
 				  }
 				}
@@ -335,46 +265,32 @@ void Back_Trailing(void)
 		}
 	  if((Back_Senor_1==1)&&(Back_Senor_2==1)&&(Back_Senor_3==0)&&(Back_Senor_4==1)&&(Back_Senor_5==1))
 		{
-		 	 tim13_val=20;
-			 tim14_val=20;
-			 __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-			 __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);//直行
+      Set_Motor(20,20);//直行
 		}
 		else if((Back_Senor_1==1)&&(Back_Senor_2==0)&&(Back_Senor_4==1)&&(Back_Senor_5==1))
 		{
-		 	 tim13_val=30;
-			 tim14_val=20;
-			 __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-			 __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);//右小偏
+		 	Set_Motor(30,20);//右小偏
 		}
 		else if((Back_Senor_1==1)&&(Back_Senor_2==1)&&(Back_Senor_4==0)&&(Back_Senor_5==1))
 		{
-		 	 tim13_val=20;
-			 tim14_val=30;
-			 __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-			 __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);//左小偏
+		 Set_Motor(20,30);//左小偏
 		}
 		else if((Back_Senor_1==0)&&(Back_Senor_2==1)&&(Back_Senor_4==1)&&(Back_Senor_5==1))
 		{
-		 	 tim13_val=40;
-			 tim14_val=20;
-			 __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-			 __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);//右大偏
+		 	 Set_Motor(40,20);//右大偏
 		}
 		else if((Back_Senor_1==1)&&(Back_Senor_2==1)&&(Back_Senor_4==1)&&(Back_Senor_5==0))
 		{
-		 	 tim13_val=20;
-			 tim14_val=40;
-			 __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-			 __HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);//左大偏
+		 	 Set_Motor(20,40);//左大偏
 		}  
 }
 
 }
 void Answer(void)                                  //回复给上位机RFID信息
 {                                                                                                                                                                                                                                                                                                                                            						
-		HAL_UART_Transmit(&huart3,(u8*)Loc,3,1000);   //上报位置
+		HAL_UART_Transmit(&huart3,(u8*)Loc,4,1000);   //上报位置
 		HAL_UART_Transmit(&huart3,&Rx_buff_2[4],4,1000);
+	  HAL_UART_Transmit(&huart3,(u8*)GG,1,1000);
 }
                                                                                                                                                                
 void Find_Rfid(void)
@@ -391,12 +307,12 @@ void Find_Rfid(void)
 						{
 							// HAL_UART_Transmit(&huart1,(u8*)Rx_buff_2,4,1000);							
 						}
-						else if((Rx_buff_2[1]==0x03)&&(Rx_buff_2[2]==0x12)&&(Rx_buff_2[3]==0x00))	//停止成功
+						else if((Rx_buff_2[1]==0x03)&&(Rx_buff_2[2]==0x12)&&(Rx_buff_2[3]==0x00))	  //停止成功
 						{
 						 //HAL_UART_Transmit(&huart1,(u8*)Rx_buff_2,4,1000);
 						   HAL_UART_Transmit(&huart2,(u8*)Read_cmd,11,1000);
 						}
-						else if(Rx_buff_2[1]==0x15)									//读成功
+						else if(Rx_buff_2[1]==0x15)									                                //读成功
 						{
 							//HAL_UART_Transmit(&huart1,&Rx_buff_2[4],4,1000);					
 							Answer();
@@ -435,40 +351,60 @@ void Find_Rfid_Match(void)
 			}
 			else if((Track_buff[i][4]=='p')&&(Track_buff[i][5]=='f'))
 			{
-			  Command_State=Stop_State;//Stop，下次启动直接向右转弯
+			  Command_State=Stop_State;      //Stop，下次启动向前循迹状态
 			}
-			else if((Track_buff[i][4]=='n')&&(Track_buff[i][5]=='f'))
+			else if((Track_buff[i][4]=='p')&&(Track_buff[i][5]=='s'))
 			{
-			  Command_State=Stop_State;//Stop，下次启动向前循迹状态
-				Motor_Status=Setup;//left
+				Motor_Status=Arrive;           //达到地图终点
 			}
 			else if((Track_buff[i][4]=='n')&&(Track_buff[i][5]=='l'))
 			{
-			   Motor_Status=Left_90;//left
+			   Motor_Status=Left_90;         //no stop ,just turn left
 			}
 			else if((Track_buff[i][4]=='n')&&(Track_buff[i][5]=='r'))
 			{
-			  Motor_Status=Right_90;//right
+			  Motor_Status=Right_90;         //no stop ,just turn right
 			}
 			else if((Track_buff[i][4]=='n')&&(Track_buff[i][5]=='f'))
 			{
 			  //前进
 			}
-      else if((Track_buff[i][4]=='p')&&(Track_buff[i][5]=='s'))
-			{
-			  Motor_Status=Arrive;//right
-			}			
 		}
 	}	
 }
 
 void Stop(void)
 {
-		tim13_val=0;
-		tim14_val=0;
-		__HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,tim13_val);
-		__HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,tim14_val);//关闭
+		Set_Motor(460,460);//关闭
 		Voltage_Test();
+}
+
+void Set_Motor(int left,int right)
+{
+    __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,left);
+		__HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,right);
+}
+
+void Set_Acc(int target)
+{
+	  int i=0;
+	  for(i=target;i>50;i--)
+	{
+		__HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,i); 
+    __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,i);		
+		HAL_Delay(8);
+	}
+}
+
+void Set_Slowdown(int target)
+{
+    int i=0;
+	  for(i=0;i<target;i++)
+	{
+		__HAL_TIM_SET_COMPARE(&htim14,TIM_CHANNEL_1,i);
+    __HAL_TIM_SET_COMPARE(&htim13,TIM_CHANNEL_1,i);		
+		HAL_Delay(8);
+	}
 }
 
 #endif

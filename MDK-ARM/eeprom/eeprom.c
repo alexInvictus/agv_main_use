@@ -14,8 +14,9 @@ void Write_id(void)
 
 void Send_Id(void)
 {
- HAL_UART_Transmit(&huart3,(u8*)Obj,3,1000);
+ HAL_UART_Transmit(&huart3,(u8*)Obj,4,1000);
  HAL_UART_Transmit(&huart3,(u8*)Read_Id,3,1000);
+ HAL_UART_Transmit(&huart3,(u8*)GG,1,1000);
 }	
 
 #endif
